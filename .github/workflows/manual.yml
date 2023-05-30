@@ -9,7 +9,7 @@ jobs:
       uses: actions/checkout@v2
     - name: login to rds
       run: |
-        bash chmod 777 s.sh
+        
         bash s.sh
         
         echo $?
