@@ -15,9 +15,9 @@ jobs:
         echo $?
     - name: dump sql
       run: |
-        MYSQL_USERNAME="${{ secrets.MYSQL_USERNAME }}"
-        MYSQL_PASSWORD="${{ secrets.MYSQL_PASSWORD }}"
-        MYSQL_HOST="${{ secrets.MYSQL_HOST }}"
+        MYSQL_USERNAME="${{ secret.MYSQL_USERNAME }}"
+        MYSQL_PASSWORD="${{ secret.MYSQL_PASSWORD }}"
+        MYSQL_HOST="${{ secret.MYSQL_HOST }}"
         mysql -u "$MYSQL_USERNAME" -p"$MYSQL_PASSWORD" -h "$MYSQL_HOST"  test < db.sql
     - name: check db status
       run: |
