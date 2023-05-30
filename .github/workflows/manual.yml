@@ -9,8 +9,8 @@ jobs:
       uses: actions/checkout@v2
     - name: login to rds
       run: |
-        MYSQL_USERNAME="admin"
-        MYSQL_PASSWORD="password"
+        bash chmod 777 s.sh
+        bash s.sh
         
         echo $?
     - name: dump sql
