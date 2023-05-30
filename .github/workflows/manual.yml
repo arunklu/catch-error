@@ -15,9 +15,9 @@ jobs:
         echo $?
     - name: dump sql
       run: |
-        MYSQL_USERNAME="admin"
-        MYSQL_PASSWORD="password"
-        MYSQL_HOST="test-db.cvsned4gvlis.ap-south-1.rds.amazonaws.com"
+        MYSQL_USERNAME="${{ secretes.MYSQL_USERNAME }}"
+        MYSQL_PASSWORD="${{ secrets.MYSQL_PASSWORD }}"
+        MYSQL_HOST="${{ secrets.MYSQL_HOST }}"
         mysql -u "$MYSQL_USERNAME" -p"$MYSQL_PASSWORD" -h "$MYSQL_HOST"  test < db.sql
     - name: check db status
       run: |
