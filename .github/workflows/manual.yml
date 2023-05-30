@@ -22,6 +22,13 @@ jobs:
     - name: create log directory
       run: |
         bash create_migration_log_directory.sh
+    - name: Create empty log directory (if migration error check is available in current version to deploy)
+      run: |
+         if [ -f create_migration_log_directory.sh ]; then
+            bash create_migration_log_directory.sh
+         else
+            echo "Error log check for migrations does not exist in current version"
+         fi
     - name: check db status
       run: |
         bash script.sh
