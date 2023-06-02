@@ -10,7 +10,7 @@ jobs:
     - name: login to rds
       run: |
         
-        bash s.sh
+        bash login.sh
         
         echo $?
     - name: dump sql
